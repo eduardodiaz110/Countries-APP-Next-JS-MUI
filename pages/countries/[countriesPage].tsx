@@ -272,7 +272,7 @@ const CountriesPages = ({countriesData}:HomePageProps) => {
     return ( 
         <>
           {countriesData.map((country) => (
-            <Grid container spacing={4} sx={{  mt:"30px", p: "0px !important",
+            <Grid container spacing={4} key={country.name.common} sx={{  mt:"30px", p: "0px !important",
             [theme.breakpoints.down('lg')]: {
               m:"0px !important",
               width:"100%"
