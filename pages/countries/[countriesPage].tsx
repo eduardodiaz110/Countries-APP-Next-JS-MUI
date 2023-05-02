@@ -278,7 +278,7 @@ const CountriesPages = ({countriesData}:HomePageProps) => {
               width:"100%"
             },
             }}>
-              <Grid item xs={12} md={6} lg={6} xl={6} key={country.name.common} sx={{ 
+              <Grid item xs={12} md={6} lg={6} xl={6}  sx={{ 
                 p:"0px 30px 0px 0px !important",
                 [theme.breakpoints.down('lg')]: {
                   paddingBottom:"30px !important",
@@ -290,10 +290,10 @@ const CountriesPages = ({countriesData}:HomePageProps) => {
                 <img className="imagen1" style={{                
                   }}  width={"100%"}src={country.flags.svg} alt={country.flags.alt}/>
               </Grid>
-              <Grid item xs={12} md={6} lg={6} xl={6} key={country.name.common} sx={{backgroundColor:"#fff",borderRadius:"30px !important", display:"flex", flexFlow:"column", p:"30px !important"}}>
+              <Grid item xs={12} md={6} lg={6} xl={6}  sx={{backgroundColor:"#fff",borderRadius:"30px !important", display:"flex", flexFlow:"column", p:"30px !important"}}>
                 <h1 style={{padding:"5px 0px 30px 0px"}}>{country.name.common}</h1>     
                   <Grid container spacing={0} sx={{}}>
-                    <Grid item xs={12} md={6} lg={6} xl={6} key={country.name.common}>
+                    <Grid item xs={12} md={6} lg={6} xl={6} >
                     <Typography variant="body1" sx={{p: "4px"}}>
                       <span style={{fontWeight:"600"}}>Native Name: </span>{country.name.official}
                     </Typography>
@@ -310,7 +310,7 @@ const CountriesPages = ({countriesData}:HomePageProps) => {
                     <span style={{fontWeight:"600"}}>Capital: </span>{country.capital}
                     </Typography>
                     </Grid>
-                    <Grid item xs={12} md={6} lg={6} xl={6} key={country.name.common}>
+                    <Grid item xs={12} md={6} lg={6} xl={6} >
                     <Typography variant="body1" sx={{p:"4px"}}>
                       <span style={{fontWeight:"600"}}>Top Level Domain: </span>{country.tld}
                     </Typography>
@@ -331,7 +331,7 @@ const CountriesPages = ({countriesData}:HomePageProps) => {
           
                     </Grid>
                   </Grid>  
-                  <Grid item xs={12} md={12} lg={12} xl={12} key={""} sx={{display:"flex", alignItems:"flex-end",width:"100%"}}>
+                  <Grid item xs={12} md={12} lg={12} xl={12}  sx={{display:"flex", alignItems:"flex-end",width:"100%"}}>
                   <Typography variant="body1" sx={{p:"4px"}}>
                   <span style={{fontWeight:"600"}}>Border: </span>
                   {country.borders ? country.borders.map(border => countryName[border]).join(", ") : <span>No border countries</span>}
