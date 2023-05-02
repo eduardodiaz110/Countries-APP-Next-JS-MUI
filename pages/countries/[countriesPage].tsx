@@ -295,39 +295,75 @@ const CountriesPages = ({countriesData}:HomePageProps) => {
                   <Grid container spacing={0} sx={{}}>
                     <Grid item xs={12} md={6} lg={6} xl={6} >
                     <Typography variant="body1" sx={{p: "4px"}}>
-                      <span style={{fontWeight:"600"}}>Native Name: </span>{country.name.official}
-                    </Typography>
-                    <Typography variant="body1" sx={{p:"4px"}}>
-                      <span style={{fontWeight:"600"}}>Population: </span>{country.population.toLocaleString()}
-                    </Typography>
-                    <Typography variant="body1" sx={{p:"4px"}}>
-                    <span style={{fontWeight:"600"}}>Region: </span>{country.region}
-                    </Typography>
-                    <Typography variant="body1" sx={{p:"4px"}}>
-                    <span style={{fontWeight:"600"}}>Sub Region: </span>{country.subregion}
-                    </Typography>
-                    <Typography variant="body1" sx={{p:"4px"}}>
-                    <span style={{fontWeight:"600"}}>Capital: </span>{country.capital}
-                    </Typography>
+                        <span style={{fontWeight:"600"}}>Native Name: </span>
+                        {country.name && country.name.official ? 
+                          country.name.official :
+                          "No Data"
+                        }
+                      </Typography>
+
+                      <Typography variant="body1" sx={{p:"4px"}}>
+                          <span style={{fontWeight:"600"}}>Population: </span>
+                          {country.population ?
+                            country.population.toLocaleString() :
+                            "No Data"
+                          }
+                        </Typography>
+
+                        <Typography variant="body1" sx={{p:"4px"}}>
+                          <span style={{fontWeight:"600"}}>Region: </span>
+                          {country.region ?
+                            country.region :
+                            "No Data"
+                          }
+                        </Typography>
+
+                        <Typography variant="body1" sx={{p:"4px"}}>
+                          <span style={{fontWeight:"600"}}>Sub Region: </span>
+                          {country.subregion ?
+                          country.subregion :
+                          "No Data"
+                          }
+                          </Typography>
+
+                          <Typography variant="body1" sx={{p:"4px"}}>
+                              <span style={{fontWeight:"600"}}>Capital: </span>
+                              {country.capital ?
+                                country.capital :
+                                "No Data"
+                              }
+                              </Typography>
+
                     </Grid>
                     <Grid item xs={12} md={6} lg={6} xl={6} >
                     <Typography variant="body1" sx={{p:"4px"}}>
-                      <span style={{fontWeight:"600"}}>Top Level Domain: </span>{country.tld}
-                    </Typography>
+                          <span style={{fontWeight:"600"}}>Top Level Domain: </span>
+                          {country.tld ?
+                            country.tld.join(", ") :
+                            "No Data"
+                          }
+                        </Typography>
+
                     {/* <Typography variant="body1">
                       <span style={{fontWeight:"600"}}>Currencies: </span>{(Object.keys(country.currencies)[0]) }
                     </Typography> */}
-                    <Typography variant="body1" sx={{p:"4px"}}>
-                        <span style={{fontWeight:"600"}}>Currencies: </span>
-                        {Object.values(country.currencies)
+                  <Typography variant="body1" sx={{p:"4px"}}>
+                      <span style={{fontWeight:"600"}}>Currencies: </span>
+                      {country.currencies ? 
+                        Object.values(country.currencies)
                           .map((currency) => currency.name)
-                          .join(", ")}
+                          .join(", ") :
+                        "No Data"
+                      }
                     </Typography>
+
                     <Typography variant="body1" sx={{p:"4px"}}>
                       <span style={{fontWeight:"600"}}>Languages: </span>
-                      {Object.values(country.languages).join(", ")}
-                    </Typography>        
-                      
+                      {country.languages ? 
+                        Object.values(country.languages).join(", ") :
+                        "No Data"
+                      }
+                    </Typography>
           
                     </Grid>
                   </Grid>  
