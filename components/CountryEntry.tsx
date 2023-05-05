@@ -18,7 +18,7 @@ const CountryEntry = ({country}:CountryEntryProps) => {
 
     return(
         <>
-        <Link href={`/countries/${country.name.common.toLocaleLowerCase()}`}>
+        <Link href={`/countries/${country.cca3.toLocaleLowerCase()}`}>
         <Card >
             <CardMedia
             sx={{ height: 170,
@@ -38,7 +38,7 @@ const CountryEntry = ({country}:CountryEntryProps) => {
                   <strong>{country.name.common}</strong>
                 </Typography>
                 <Typography variant="body1">
-                  <span style={{fontWeight:"600"}}>Population: </span>{country.population}
+                  <span style={{fontWeight:"600"}}>Population: </span>{country.population.toLocaleString()}
                 </Typography>
                 <Typography variant="body1">
                 <span style={{fontWeight:"600"}}>Region: </span>{country.region}

@@ -48,8 +48,8 @@ export enum themePalette {
                 {
                     props: { variant: 'contained'},
                     style: {
-                      backgroundColor: `${themePalette.CYAN}`,
-                      color: 'white',
+                      backgroundColor: `${themePalette.BG}`,
+                      color: 'black',
                       borderRadius: '25px',
                       padding: '5px 20px',
                       textTransform: 'none'
