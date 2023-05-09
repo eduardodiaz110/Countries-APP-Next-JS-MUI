@@ -44,7 +44,7 @@ export default function Home({countriesData}:HomePageProps,{handleClearClick}:an
       const region = regionParam.toString().toLowerCase();
       const search = searchParam.toString().toLowerCase();
   
-      console.log("Region: "+region+ " "+"Search: "+ search)
+      // console.log("Region: "+region+ " "+"Search: "+ search)
   
       if(region==="all"){
         const filteredCountriesName = countries.filter((country:any) => country.name.common.toLowerCase().includes(search.toLowerCase()));
@@ -75,7 +75,7 @@ export default function Home({countriesData}:HomePageProps,{handleClearClick}:an
     if ((!regionParam && searchParam) || (searchParam && (regionParam==="")) ) {
       const search = searchParam.toString().toLowerCase();
   
-      console.log("Search "+search)
+      // console.log("Search "+search)
   
       const filteredCountriesName = countries.filter((country:any) => country.name.common.toLowerCase().includes(search.toLowerCase()));
       setCountriesDisplayArray(filteredCountriesName);
@@ -95,7 +95,7 @@ export default function Home({countriesData}:HomePageProps,{handleClearClick}:an
     if ((regionParam && !searchParam) || (regionParam && (searchParam==="")) ) {
       const region = regionParam.toString().toLowerCase();
   
-      console.log("Region "+region)
+      // console.log("Region "+region)
       if(region==="all"){
         setCountriesDisplayArray(countries);
       }else{
