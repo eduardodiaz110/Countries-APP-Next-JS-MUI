@@ -39,7 +39,7 @@ export default function Home({countriesData}:HomePageProps,{handleClearClick}:an
   const [countries, setCountries] = useState<CountriesData[]>(countriesData);
   const [countriesDisplayArray, setCountriesDisplayArray] = useState<CountriesData[]>(countriesData);
 
-  useMemo(() => {
+  useEffect(() => {
     if (regionParam && searchParam) {
       const region = regionParam.toString().toLowerCase();
       const search = searchParam.toString().toLowerCase();

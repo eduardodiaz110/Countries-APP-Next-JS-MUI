@@ -99,12 +99,19 @@ const CountriesDataGrid = ({countries, countriesDisplayArray}:CountriesGridProps
   useEffect(() => {
     setDataSource(countriesDisplayArray.slice(0, 20));
     setHasMore(true);
+    if (dataSource.length >= countriesDisplayArray.length) {
+      console.log(dataSource.length)
+      console.log(countriesDisplayArray.length)
+      setHasMore(false);
+    }
   }, [countriesDisplayArray]);
 
 
   const fetchMoreData = () => {
     const newLength = dataSource.length + 20;
-    if (newLength >= countriesDisplayArray.length) {
+    if (dataSource.length >= countriesDisplayArray.length) {
+      console.log(dataSource.length)
+      console.log(countriesDisplayArray.length)
       setHasMore(false);
     }
 
